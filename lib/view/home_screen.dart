@@ -58,8 +58,12 @@ class _HomeViewState extends State<HomeView> {
       padding: const EdgeInsets.only(top: 16),
       itemBuilder: (context, index) => InkWell(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const DetailScreen()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DetailScreen(
+                        product: productsController.products[index],
+                      )));
         },
         child: Card(
           elevation: 0.0,
